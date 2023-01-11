@@ -20,17 +20,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/seekerprofile" , to: 'seekers#show'
-  patch "/seekerprofile" , to: 'seekers#update'
-  post '/signupseekers' , to: 'seekers#create'
-  patch
-
-  get "/companyprofile" , to: 'employers#show'
-  patch "/companyprofile" , to 'employers#update'
-  post '/signupemployers' , to: 'employers#create'
-
-
-
+  
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
