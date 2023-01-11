@@ -46,6 +46,13 @@ puts "donejobs"
 
 Internship.create(employer_id:1,category_id:9,positiontitle:"Junior Intern",positionsvailable:1,salary:10000,location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills")
 puts "done insternships"
- 
 
 Account.create(employer_id:1,email:"lencare@gmail",password:"lencare")
+
+Savedjob.create(seeker_id:1,job_id:1)
+
+Jobapplication.create(job_id: 1,seeker_id:1,dateapplied:"01-01-2023")
+
+Savedcompany.create(seeker_id:1,employer_id:1)
+
+Savedprofile.create(employer_id:1,seeker_id:1)

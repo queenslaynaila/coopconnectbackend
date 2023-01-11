@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'savedcompanies/index'
+  get 'savedcompanies/show'
+  get 'savedcompanies/create'
+  get 'savedcompanies/update'
+  get 'savedcompanies/destroy'
   resources :questions
   resources :quizzes
   resources :surveyanswers
