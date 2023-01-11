@@ -3,6 +3,8 @@ class Account < ApplicationRecord
  belongs_to :seeker ,optional: true
  belongs_to :employer, optional: true
 
+ validates :email, presence: true, uniqueness: true
+ 
  def owner
   @owner ||= seeker || employer
 end

@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
-
+    skip_before_action :authorized, only: :create
   # POST '/login'
   def create
-      account = Account.find_by(username:params[:email])
+      account = Account.find_by(email:params[:email])
       if account&.authenticate(params[:password])
           session[:account_id] = account.id
           render json: account, status: :created
       else
-         render json: {error: "Invalid username or password"}, status: :unauthorized
+         render json: {error: "Invalid email or password"}, status: :unauthorized
       end
   end
 
@@ -16,4 +16,5 @@ class SessionsController < ApplicationController
       session.delete :account_id
       head :no_content
   end
+
 end
