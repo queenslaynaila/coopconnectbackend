@@ -11,6 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_11_163347) do
+<<<<<<< HEAD
+=======
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+>>>>>>> da6998bda5e98c2a5ef003173f313c9181504bce
   create_table "accounts", force: :cascade do |t|
     t.integer "seeker_id"
     t.integer "employer_id"

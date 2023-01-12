@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
- 
+
 
 # Build commands for back end
 bundle install

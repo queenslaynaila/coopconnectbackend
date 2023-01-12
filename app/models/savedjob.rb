@@ -1,5 +1,5 @@
 class Savedjob < ApplicationRecord
   belongs_to :seeker
-  belongs_to :jobs
+  belongs_to :job
 
 end
