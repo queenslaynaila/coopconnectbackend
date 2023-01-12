@@ -39,13 +39,14 @@ class InternshipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_internship
-      @internship = Internship.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def internship_params
-      params.require(:internship).permit(:employer_id, :category_id, :positiontitle, :positionsvailable, :salary, :location, :keyskills)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_internship
+    @internship = Internship.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def internship_params
+    params.require(:internship).permit(:employer_id, :category_id, :positiontitle, :positionsvailable, :salary, :location, :keyskills)
+  end
 end

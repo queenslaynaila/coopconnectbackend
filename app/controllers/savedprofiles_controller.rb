@@ -39,13 +39,14 @@ class SavedprofilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_savedprofile
-      @savedprofile = Savedprofile.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def savedprofile_params
-      params.require(:savedprofile).permit(:employer_id, :seeker_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_savedprofile
+    @savedprofile = Savedprofile.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def savedprofile_params
+    params.require(:savedprofile).permit(:employer_id, :seeker_id)
+  end
 end
