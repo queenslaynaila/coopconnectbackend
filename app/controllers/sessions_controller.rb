@@ -2,12 +2,24 @@ class SessionsController < ApplicationController
 
   # POST '/login'
   def create
-    account = Account.find_by(email:params[:email])
-    if account&.authenticate(params[:password])
-        session[:account_id] = account.id
-        render json: account, status: :created
+      account = Account.find_by(email:params[:email])
+      if account&.authenticate(params[:password])
+          if account.seeker
+            render json: account.seeker, status: :created
+          else
+           render json: account.employer,status: :created
+         end
+      else
+         render json: {error: "Invalid email or password"}, status: :unauthorized
+      end
+  end
+
+  def show
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user
     else
-       render json: {error: "Invalid email or password"}, status: :unauthorized
+      render json: { error: "Not authorized" }, status: :unauthorized
     end
   end
 
@@ -17,13 +29,5 @@ class SessionsController < ApplicationController
       head :no_content
   end
 
-  def currentuser
-    user = User.find_by(id: session[:account_id])
-    if user
-      render json: user
-    else
-      render json: { error: "Not authorized" }, status: :unauthorized
-    end
-  end
 
 end
