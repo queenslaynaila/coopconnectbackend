@@ -1,7 +1,7 @@
 class CreateEmployers < ActiveRecord::Migration[7.0]
   def change
     create_table :employers do |t|
-   
+
       t.text :name
       t.text :firstname
       t.text :secondname
@@ -9,7 +9,7 @@ class CreateEmployers < ActiveRecord::Migration[7.0]
       t.string :websiteurl
       t.text :description
       t.text :designation
-      t.text :user_type, default:"Jobseeker"
+      t.text :user_type, default:"Employer"
 
       t.timestamps
     end

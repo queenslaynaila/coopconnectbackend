@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'savedcompanies/index'
-  get 'savedcompanies/show'
-  get 'savedcompanies/create'
-  get 'savedcompanies/update'
-  get 'savedcompanies/destroy'
   resources :questions
   resources :quizzes
   resources :surveyanswers
@@ -21,15 +16,12 @@ Rails.application.routes.draw do
   resources :seekers
   resources :accounts
   resources :categories
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 
   post '/login', to: 'sessions#create'
+  get "/me", to: "sessions#show"
   delete '/logout', to: 'sessions#destroy'
-  get '/me', to: "accounts#show"
-
-
-
+  #let these be on application to create relevant account record each time a signup is complete
+  post "/seekersignup", to: 'application#createseeker'
+  post  "/employersignup", to:  'application#createemployer'
 end

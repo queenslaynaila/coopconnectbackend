@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_163347) do
     t.string "websiteurl"
     t.text "description"
     t.text "designation"
-    t.text "user_type", default: "Jobseeker"
+    t.text "user_type", default: "Employer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

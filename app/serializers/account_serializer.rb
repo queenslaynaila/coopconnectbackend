@@ -1,3 +1,6 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :seeker_id,:employer_id,  :email, :password_digest
+  belongs_to :seeker ,optional: true
+  belongs_to :employer, optional: true
+
+  attributes :id, :seeker_id,:employer_id,  :email 
 end
