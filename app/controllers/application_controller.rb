@@ -32,7 +32,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  
+
   private
 
   def employer_params

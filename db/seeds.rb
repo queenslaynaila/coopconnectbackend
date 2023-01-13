@@ -5,21 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Category.destroy_all
-Account.destroy_all
-Seeker.destroy_all
-Account.destroy_all
-Education.destroy_all
-Experience.destroy_all
-Employer.destroy_all
-Job.destroy_all
-Savedprofile.destroy_all
-Savedjob.destroy_all
-Internship.destroy_all
-Savedcompany.destroy_all
-Jobapplication.destroy_all
-Internship.destroy_all
-puts "done destroy"
+
 categories = Category.create([
   {name:"Marketing",image:"https://i.ibb.co/9bzQfKq/care.png"},
   {name:"Design",image:"https://i.ibb.co/9gZLcf1/browse.png"},
@@ -32,9 +18,9 @@ categories = Category.create([
   {name:"Internships",image:"https://i.ibb.co/WBsjTQ7/analytics.png"}])
 
   puts "done categories"
-  Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"queenslay")
-Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge")
 
+Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge")
+Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"queenslay")
 puts "done seekers"
 
 puts "done users"

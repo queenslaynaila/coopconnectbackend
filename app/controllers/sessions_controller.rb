@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   def create
       account = Account.find_by(email:params[:email])
       if account&.authenticate(params[:password])
+          session[:account_id] = account.id
           if account.seeker
             render json: account.seeker, status: :created
           else
@@ -14,15 +15,6 @@ class SessionsController < ApplicationController
       end
   end
 
-  def show
-    user = User.find_by(id: session[:user_id])
-    if user
-      render json: user
-    else
-      render json: { error: "Not authorized" }, status: :unauthorized
-    end
-  end
-
   # DELETE '/logout'
   def destroy
       session.delete :account_id
@@ -30,4 +22,11 @@ class SessionsController < ApplicationController
   end
 
 
+  private
+  def employer_params
+    params.permit(:name, :firstname, :secondname, :companytype, :websiteurl, :description, :designation, :user_type )
+  end
+  def account_params
+    params.permit(:seeker_id,:employer_id,:email, :password)
+  end
 end
