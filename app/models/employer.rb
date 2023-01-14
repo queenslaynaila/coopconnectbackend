@@ -7,4 +7,5 @@ class Employer < ApplicationRecord
   has_many :categories, through: :internships
   has_many :savedprofiles
   has_many :seekers , through: :savedprofiles
+  
 end

@@ -13,6 +13,7 @@ class CreateJobs < ActiveRecord::Migration[7.0]
       t.text :location
       t.text :keyskills
       t.text :responsibilities
+      t.text  :overallsummarry
       t.date :dateposted
 
       t.timestamps
