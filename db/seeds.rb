@@ -1,14 +1,5 @@
 
-puts "done"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-categories = Category.create([
+ categories = Category.create([
   {name:"Marketing",image:"https://i.ibb.co/TvNLSxY/analytics.png"},
   {name:"Design",image:"https://i.ibb.co/9gZLcf1/browse.png"},
   {name:"CustomerService" ,image:"https://i.ibb.co/FnRPDC9/customer.png"},
@@ -22,8 +13,10 @@ categories = Category.create([
   {name:"Secretary",image:"https://i.ibb.co/WBsjTQ7/analytics.png"}])
 
 Employer.create(name:"LencareSoftware",firstname:"Lencer",secondname:"Jill",companytype:"private",websiteurl:"https://dan.com/buy-domain/rennder.com?redirected=true", description:"A software company founded in 200.Providing softwaresolutions for you",designation:"ICT staff")
+Employer.create(name:"tessse",firstname:"Lencer",secondname:"Jill",companytype:"private",websiteurl:"https://dan.com/buy-domain/rennder.com?redirected=true", description:"A software company founded in 200.Providing softwaresolutions for you",designation:"ICT staff")
 
 Job.create(employer_id:1,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
+Job.create(employer_id:2,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
 
 Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge")
 Keyskill.create(seeker_id:1,skillname:"Teamwork")
@@ -63,6 +56,7 @@ Account.create(employer_id:1,email:"lencare@gmail",password:"lencare")
 Savedjob.create(seeker_id:1,job_id:1)
 
 Jobapplication.create(job_id: 1,seeker_id:1,dateapplied:"01-01-2023")
+Jobapplication.create(job_id: 2,seeker_id:1,dateapplied:"01-01-2023")
 
 Savedcompany.create(seeker_id:1,employer_id:1)
 

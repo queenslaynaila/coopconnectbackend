@@ -3,12 +3,13 @@ class SeekerSerializer < ActiveModel::Serializer
   has_one :account
   has_many :educations
   has_many :experiences
-  has_many :savedjobs
-
+  has_many :savedjobs  
   has_many :savedcompanies
 
   has_many :jobapplications
-  has_many :employers,through: :jobapplications
+  has_many :jobs , through: :jobapplications
+  has_many :employers , through: :jobs
+
   has_many :savedinternships
   has_many :internshipapplications
 

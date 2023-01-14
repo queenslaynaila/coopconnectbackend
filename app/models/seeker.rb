@@ -13,5 +13,5 @@ class Seeker < ApplicationRecord
   has_many :jobs ,through: :savedjobs
   has_many :savedcompanies
   has_many :savedprofiles
-  has_many :employers, through: :savedcompanies
+  
 end
