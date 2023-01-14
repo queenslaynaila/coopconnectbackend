@@ -5,7 +5,7 @@ class SeekersController < ApplicationController
   def index
     @seekers = Seeker.all
 
-    render json: @seekers
+    render json: @seekers  
   end
 
   # GET /seekers/1

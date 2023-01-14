@@ -26,6 +26,9 @@ Employer.create(name:"LencareSoftware",firstname:"Lencer",secondname:"Jill",comp
 Job.create(employer_id:1,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
 
 Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge")
+Keyskill.create(seeker_id:1,skillname:"Teamwork")
+Keyskill.create(seeker_id:1,skillname:"Communication skills")
+Keyskill.create(seeker_id:1,skillname:"Working Together")
 Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"queenslay")
 puts "done seekers"
 

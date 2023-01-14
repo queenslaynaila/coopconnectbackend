@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :keyskills
   resources :internshipapplications
   resources :savedinternships
   resources :questions
