@@ -8,5 +8,5 @@ class SeekerSerializer < ActiveModel::Serializer
   has_many :employers, through: :savedcompanies
   has_many :jobapplications
 
-  attributes :id,  :firstname, :secondname, :phone, :country, :city, :about ,:usertype
+  attributes :id,  :firstname, :secondname, :phone, :country, :city, :about ,:usertype,:created_at
 end

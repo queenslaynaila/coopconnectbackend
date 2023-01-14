@@ -7,7 +7,6 @@ class ApplicationController < ActionController::API
     if @employer.save
       @account = Account.new(employer_id:@employer.id,email:params[:email],password:params[:password])
         if @account.save
-            session[:account_id] = account.id
           render json: @employer, status: :created, location: @employer
         else
           render json: @account.errors, status: :unprocessable_entity
