@@ -18,13 +18,15 @@ Employer.create(name:"tessse",firstname:"Lencer",secondname:"Jill",companytype:"
 Job.create(employer_id:1,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
 Job.create(employer_id:2,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
 
-Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge")
+Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge",profession:"Software Enginner",yearsinprofesion:1)
 Keyskill.create(seeker_id:1,skillname:"Teamwork")
 Keyskill.create(seeker_id:1,skillname:"Communication skills")
 Keyskill.create(seeker_id:1,skillname:"Working Together")
 Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"queenslay")
 puts "done seekers"
-
+Socialprofile.create(seeker_id:1,platform:"Github",link:"https://github.com/queenslaynaila?tab=repositories")
+Socialprofile.create(seeker_id:1,platform:"Facebook",link:"https://github.com/queenslaynaila?tab=repositories")
+Socialprofile.create(seeker_id:1,platform:"Instagram",link:"https://github.com/queenslaynaila?tab=repositories")
 puts "done users"
 Education.create(seeker_id:1 ,level:"Degree",startdate:"01-01-2018" ,enddate:'01-01-2022',certificatename:"Bachelor of Arts Political Science and Public Admin",institution:"University of Nairobi")
 Education.create(seeker_id:1 ,level:"Certificate",startdate:"01-06-2022" ,enddate:'01-02-2023',certificatename:"Certificate in Software Engineering",institution:"MoringaSchool")

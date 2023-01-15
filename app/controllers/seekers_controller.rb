@@ -5,7 +5,7 @@ class SeekersController < ApplicationController
   def index
     @seekers = Seeker.all
 
-    render json: @seekers  
+    render json: @seekers
   end
 
   # GET /seekers/1
@@ -46,6 +46,6 @@ class SeekersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seeker_params
-      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype)
+      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype,:profession,:yearsinprofesion)
     end
 end
