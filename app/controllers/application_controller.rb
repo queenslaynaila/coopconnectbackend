@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
   def createemployer
     @employer = Employer.new(employer_params)
@@ -9,7 +10,7 @@ class ApplicationController < ActionController::API
         if @account.save
           render json: @employer, status: :created, location: @employer
         else
-          render json: @account.errors, status: :unprocessable_entity
+          render json: @account.errors  , status: :unprocessable_entity
         end
     else
       render json: @employer.errors, status: :unprocessable_entity
@@ -32,6 +33,7 @@ class ApplicationController < ActionController::API
   end
 
 
+
   private
 
   def employer_params
@@ -40,5 +42,8 @@ class ApplicationController < ActionController::API
   def seeker_params
     params.permit(:firstname, :secondname)
   end
+  def render_unprocessable_entity_response(invalid)
+    render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+end
 
 end

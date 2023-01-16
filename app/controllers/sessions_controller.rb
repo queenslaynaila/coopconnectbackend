@@ -20,6 +20,14 @@ class SessionsController < ApplicationController
       session.delete :account_id
       head :no_content
   end
+  def show
+    user = Seeker.find_by(id: session[:seeker_id])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
+  end
 
 
   private

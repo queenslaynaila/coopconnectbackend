@@ -5,7 +5,7 @@ class SeekersController < ApplicationController
   def index
     @seekers = Seeker.all
 
-    render json: @seekers  
+    render json: @seekers
   end
 
   # GET /seekers/1
@@ -37,7 +37,10 @@ class SeekersController < ApplicationController
   def destroy
     @seeker.destroy
   end
-
+  def minesavedjobs
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.savedjobs
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_seeker
@@ -46,6 +49,6 @@ class SeekersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seeker_params
-      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype)
+      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype,:profession,:yearsinprofesion,:gender,:yearofbirth)
     end
 end
