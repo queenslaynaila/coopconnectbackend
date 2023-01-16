@@ -37,7 +37,10 @@ class SeekersController < ApplicationController
   def destroy
     @seeker.destroy
   end
-
+  def minesavedjobs
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.savedjobs
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_seeker

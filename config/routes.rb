@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   resources :accounts
   resources :categories
 
+  resources :savedjobs do
+    member do
+      get 'minesavedjobs'
+    end
+  end
 
   post '/login', to: 'sessions#create'
   get "/me", to: "sessions#show"
@@ -28,5 +33,5 @@ Rails.application.routes.draw do
   #let these be on application to create relevant account record each time a signup is complete
   post "/seekersignup", to: 'application#createseeker'
   post  "/employersignup", to:  'application#createemployer'
-
+   get "/seekers/:id/savedjobs",to: 'seekers#minesavedjobs'
 end
