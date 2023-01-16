@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :surveys
   resources :jobapplications
   resources :savedprofiles
-
+   resources :savedcompanies
   resources :savedjobs
   resources :internships
   resources :jobs
@@ -24,7 +24,15 @@ Rails.application.routes.draw do
   resources :seekers do
     resources :employers  #enables seekers/id/employers
   end
-
+   resources :seekers do
+    resources :educations #enables sekekers/id/educations
+   end
+   resources :seekers do
+    resources :experiences #enables seekers/id/experiences
+   end
+   resoources :seekers do
+    resources :keyskills    #enables seekers/id/keyskills
+   end
 
   resources :seekers do
     member do
@@ -80,7 +88,7 @@ Rails.application.routes.draw do
   get "seekers/:id/savedinternships", to: 'seekers#mysavedinternshipsagain'
   get "seekers/:id/appliedjobs",to:'seekers#mineappliedjobs'
   get "seekers/:id/appliedinternships", to:'seekers#mineappliedinternships'
-  get "/me", to: "sessions#show"
+  get "seekers/:id/savedcompanies", to: "seekers#mysavedcompanies"
 
    delete '/logout', to: 'sessions#destroy'
 

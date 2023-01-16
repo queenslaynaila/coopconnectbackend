@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
          render json: {error: "Invalid email or password"}, status: :unauthorized
       end
   end
-
+   
   # DELETE '/logout'
   def destroy
       session.delete :account_id
