@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :surveys
   resources :jobapplications
   resources :savedprofiles
-  resources :savedcompanies
+
   resources :savedjobs
   resources :internships
   resources :jobs
@@ -21,17 +21,68 @@ Rails.application.routes.draw do
   resources :accounts
   resources :categories
 
-  resources :savedjobs do
+  resources :seekers do
+    resources :employers  #enables seekers/id/employers
+  end
+
+
+  resources :seekers do
     member do
       get 'minesavedjobs'
     end
+    member do
+      get 'mysavedinternshipsagain'
+    end
+    member do
+      get 'mineappliedjobs'
+    end
+    member do
+      get 'mineappliedinternships'
+    end
+    member do
+      get 'mysavedcompanies'
+    end
+    member do
+      get 'myappliedemployers'
+    end
   end
 
-  post '/login', to: 'sessions#create'
-  get "/me", to: "sessions#show"
-  delete '/logout', to: 'sessions#destroy'
-  #let these be on application to create relevant account record each time a signup is complete
+  resources :employers do
+     member do
+       get "postedjobs"
+     end
+     member do
+      get "savedprofiles"
+     end
+     member do
+      get "postedinternships"
+     end
+     member do
+      get "seekersapplied"
+     end
+  end
+
+
+
+
   post "/seekersignup", to: 'application#createseeker'
   post  "/employersignup", to:  'application#createemployer'
-   get "/seekers/:id/savedjobs",to: 'seekers#minesavedjobs'
+  post '/login', to: 'sessions#create'
+
+  get "/employers/:id/jobs",to: 'employers#postedjobs'
+  get "/employers/:id/internships",to: 'employers#postedinternships'
+  get "/employers/:id/savedprofiles",to: 'employers#savedprofiles'
+  get "/employers/:id/applicants",to: 'employers#seekersapplied'
+
+
+
+  get "/seekers/:id/savedjobs",to: 'seekers#minesavedjobs'
+  get "seekers/:id/savedinternships", to: 'seekers#mysavedinternshipsagain'
+  get "seekers/:id/appliedjobs",to:'seekers#mineappliedjobs'
+  get "seekers/:id/appliedinternships", to:'seekers#mineappliedinternships'
+  get "/me", to: "sessions#show"
+
+   delete '/logout', to: 'sessions#destroy'
+
+
 end

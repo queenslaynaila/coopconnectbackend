@@ -1,3 +1,5 @@
 class SavedprofileSerializer < ActiveModel::Serializer
-  attributes :id, :employer_id, :seeker_id
+  attributes :id
+
+  belongs_to :seeker
 end

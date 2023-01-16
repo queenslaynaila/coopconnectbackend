@@ -41,6 +41,27 @@ class SeekersController < ApplicationController
     @seeker = Seeker.find(params[:id])
     render json: @seeker.savedjobs
   end
+  def mysavedinternshipsagain
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.savedinternships
+  end
+  def mineappliedjobs
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.jobapplications
+  end
+  def mineappliedinternships
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.internshipapplications
+  end
+  def mysavedcompanies
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.savedcompanies
+  end
+  def  myappliedemployers
+    @seeker = Seeker.find(params[:id])
+    render json: @seeker.jobapplications, only: [:mine]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_seeker

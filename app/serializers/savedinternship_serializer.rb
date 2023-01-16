@@ -1,5 +1,6 @@
 class SavedinternshipSerializer < ActiveModel::Serializer
-  attributes :id, :seeker_id, :internship_id
-  belongs_to :seeker
+  attributes :id, :internship_id ,:employer
+
   belongs_to :internship
+  
 end
