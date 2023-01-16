@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
   create_table "jobapplications", force: :cascade do |t|
     t.integer "job_id"
     t.integer "seeker_id"
+    t.text "status", default: "applied"
     t.date "dateapplied"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -149,7 +150,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
   create_table "seekers", force: :cascade do |t|
     t.text "firstname"
     t.text "secondname"
-    t.integer "phone"
+    t.text "gender"
+    t.date "yearofbirth"
+    t.string "phone"
     t.text "country"
     t.text "city"
     t.text "about"

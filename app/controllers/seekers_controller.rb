@@ -46,6 +46,6 @@ class SeekersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seeker_params
-      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype,:profession,:yearsinprofesion)
+      params.require(:seeker).permit( :firstname, :secondname, :phone, :country, :city, :about, :usertype,:profession,:yearsinprofesion,:gender,:yearofbirth)
     end
 end

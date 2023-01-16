@@ -16,13 +16,13 @@ Employer.create(name:"LencareSoftware",firstname:"Lencer",secondname:"Jill",comp
 Employer.create(name:"tessse",firstname:"Lencer",secondname:"Jill",companytype:"private",websiteurl:"https://dan.com/buy-domain/rennder.com?redirected=true", description:"A software company founded in 200.Providing softwaresolutions for you",designation:"ICT staff")
 
 Job.create(employer_id:1,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
-Job.create(employer_id:2,category_id:5,jobtitle:"Junior Developer",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
+Job.create(employer_id:2,category_id:5,jobtitle:"SeniorDeveloper",positionsavailable:"7",experienceinyears:1,minsalary:30000,maximumsalary:60000,minimumeducationallevel:"Degree",senioritylevel:"Intern",location:"Nairobi",keyskills:"JS,React,React Native,Angular,Node,Teamwork,Goodcommskills",responsibilities:"Write code, Writecodeagain,Eatcode",dateposted:"22-05-2022",overallsummarry:"A junior developer capable of eriting code for us.Main duties are to write code")
 
-Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge",profession:"Software Enginner",yearsinprofesion:1)
+Seeker.create(firstname:"Queenslay",secondname:"Jema" ,phone:123456789, country:"Kenya",city:"Nairobi",about:"I am a student of Literature , I likes to read novels, plays, poetry, I always spend more time to explore my knowledge",profession:"Software Enginner",yearsinprofesion:1,gender:"female",yearofbirth:"22-05-2000")
 Keyskill.create(seeker_id:1,skillname:"Teamwork")
 Keyskill.create(seeker_id:1,skillname:"Communication skills")
 Keyskill.create(seeker_id:1,skillname:"Working Together")
-Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"queenslay")
+Account.create(seeker_id:1,email:"queenslayjema@gmail.com",password:"Jema@naila2000")
 puts "done seekers"
 Socialprofile.create(seeker_id:1,platform:"Github",link:"https://github.com/queenslaynaila?tab=repositories")
 Socialprofile.create(seeker_id:1,platform:"Facebook",link:"https://github.com/queenslaynaila?tab=repositories")
@@ -53,7 +53,7 @@ Internship.create(employer_id:1,category_id:9,positiontitle:"Junior Intern",posi
 puts "done insternships"
 
 
-Account.create(employer_id:1,email:"lencare@gmail",password:"lencare")
+Account.create(employer_id:1,email:"lencare@gmail",password:"Jema@naila2000")
 
 Savedjob.create(seeker_id:1,job_id:1)
 

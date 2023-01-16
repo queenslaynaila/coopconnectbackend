@@ -1,4 +1,9 @@
 class Seeker < ApplicationRecord
+
+  validates :firstname, presence: true
+  validates :secondname,presence: true
+  validates :gender , presence: true
+  validates :yearofbirth, presence: true
   has_many :keyskills
   has_one :account
   has_many :educations

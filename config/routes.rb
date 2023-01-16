@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   #let these be on application to create relevant account record each time a signup is complete
   post "/seekersignup", to: 'application#createseeker'
   post  "/employersignup", to:  'application#createemployer'
-  
+
 end
