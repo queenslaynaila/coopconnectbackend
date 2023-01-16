@@ -1,6 +1,7 @@
 class JobapplicationSerializer < ActiveModel::Serializer
   belongs_to :job
-  belongs_to :seeker
 
-  attributes :id, :job_id, :seeker_id, :status, :dateapplied
+  has_one :employer,through: :job
+  attributes :id,    :status, :dateapplied,:employer
+
 end

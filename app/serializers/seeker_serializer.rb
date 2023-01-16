@@ -1,14 +1,6 @@
 class SeekerSerializer < ActiveModel::Serializer
 
-
-
-
-
-
-
-
-
-  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totaljobsapplied,:totalcompaniesapplied,:totalinternshipsapplied ,:totalsavedinternships,:totalsavedcompanies ,:totalsavedjobs,:keyskills,:educations,:experiences ,:account,:appliedjobs, :mysavedjobs ,:mysavedinternships,:myappliedinternships,:mysavedcompanies,:appliedcompanies,:created_at,:mediaprofiles
+  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied
 
   def totalsavedjobs
     self.object.savedjobs.count
@@ -25,40 +17,7 @@ class SeekerSerializer < ActiveModel::Serializer
   def totalinternshipsapplied
     self.object.internshipapplications.count
   end
-  def appliedcompanies
-    self.object.jobapplications.map do |element|
-      element.employer
-     end
-  end
 
-  def totalcompaniesapplied
-   me =  self.object.jobapplications.map do |element|
-      element.employer
-     end
-     me.count
-  end
-
-  def appliedjobs
-    self.object.jobapplications.map do |element|
-     [element.job,employer:element.job.employer]
-    end
-  end
-
-  def mysavedjobs
-    self.object.savedjobs.map do |element|
-      element.job
-     end
-  end
-  def myappliedinternships
-    self.object.internshipapplications.map do |element|
-      element.internships
-     end
-  end
-  def mysavedcompanies
-    self.object.savedcompanies.map do |element|
-      element.employer
-     end
-  end
   def keyskills
     self.object.keyskills.map do |element|
       element.skillname
@@ -69,11 +28,7 @@ class SeekerSerializer < ActiveModel::Serializer
       puts "  #{key} => #{value}"
      end
   end
-  def mysavedinternships
-    self.object.savedinternships.map do |element|
-      element.internships
-     end
-  end
+
   def email
     self.object.account.email
   end

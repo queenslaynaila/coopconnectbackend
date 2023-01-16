@@ -63,3 +63,5 @@ Jobapplication.create(job_id: 2,seeker_id:1,dateapplied:"01-01-2023")
 Savedcompany.create(seeker_id:1,employer_id:1)
 
 Savedprofile.create(employer_id:1,seeker_id:1)
+Savedinternship.create(seeker_id:1,internship_id:1)
+Internshipapplication.create(seeker_id:1,internship_id:1)
