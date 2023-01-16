@@ -24,15 +24,7 @@ Rails.application.routes.draw do
   resources :seekers do
     resources :employers  #enables seekers/id/employers
   end
-   resources :seekers do
-    resources :educations #enables sekekers/id/educations
-   end
-   resources :seekers do
-    resources :experiences #enables seekers/id/experiences
-   end
-   resoources :seekers do
-    resources :keyskills    #enables seekers/id/keyskills
-   end
+
 
   resources :seekers do
     member do
@@ -70,6 +62,12 @@ Rails.application.routes.draw do
      end
   end
 
+  resources :seekers do
+    resources :employers  #enables seekers/id/employers
+    resources :experiences #enables seekers/id/experiences
+    resources :educations #enables sekekers/id/educations
+    resources :keyskills     #enables seekers/id/keyskills
+  end
 
 
 
