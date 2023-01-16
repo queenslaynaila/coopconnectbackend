@@ -37,8 +37,28 @@ class EmployersController < ApplicationController
   def destroy
     @employer.destroy
   end
+  def postedjobs
+    @employer = Employer.find(params[:id])
+    render json: @employer.jobs
+  end
+  def savedprofiles
+    @employer = Employer.find(params[:id])
+    render json: @employer.savedprofiles
+  end
+  def postedinternships
+    @employer = Employer.find(params[:id])
+    render json: @employer.internships
+  end
+  def seekersapplied
+    @employer = Employer.find(params[:id])
+    render json: @employer.jobapplications
+  end
+
+
 
   private
+
+   
     # Use callbacks to share common setup or constraints between actions.
     def set_employer
       @employer = Employer.find(params[:id])

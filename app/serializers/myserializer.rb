@@ -1,4 +1,4 @@
-class JobapplicationSerializer < ActiveModel::Serializer
+class MySerializer < JobapplicationSerializer
   belongs_to :job
  belongs_to :seeker
   has_one :employer,through: :job

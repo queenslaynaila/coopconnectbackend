@@ -4,6 +4,7 @@ class Employer < ApplicationRecord
   validates :secondname,presence: true
   has_one :account
   has_many :jobs
+  has_many :savedjobs, through: :jobs
   has_many :internships
   has_many :internshipapplications, through: :internships
   has_many :categories, through: :jobs
