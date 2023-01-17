@@ -1,6 +1,6 @@
 class SeekerSerializer < ActiveModel::Serializer
 
-  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied,:totalcompaniesapplied
+  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied,:totalcompaniesapplied ,:educations,:keyskills,:experiences
 
   def totalsavedjobs
     self.object.savedjobs.count
