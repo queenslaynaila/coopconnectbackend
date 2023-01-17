@@ -89,6 +89,6 @@ Rails.application.routes.draw do
   get "seekers/:id/savedcompanies", to: "seekers#mysavedcompanies"
 
    delete '/logout', to: 'sessions#destroy'
-
+  get "/me" ,to: "application#show"
 
 end

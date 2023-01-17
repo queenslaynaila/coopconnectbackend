@@ -1,6 +1,6 @@
 class EmployerSerializer < ActiveModel::Serializer
 
-  attributes   :id, :name, :firstname, :secondname, :companytype, :websiteurl, :description, :designation , :user_type,:savedpostedjobs ,:totaljobsposted,:totalinternshipsposted,:totaljobapplications,:created_at
+  attributes   :id, :name, :firstname, :secondname, :companytype, :websiteurl, :description, :designation , :user_type,:savedpostedjobs ,:totaljobsposted,:totalinternshipsposted,:totaljobapplications,:jobs,:account,:created_at
   def totaljobsposted
     self.object.jobs.count
   end

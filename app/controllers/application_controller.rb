@@ -32,7 +32,18 @@ class ApplicationController < ActionController::API
     end
   end
 
-
+  def show
+    account = Account.find_by(id: session[:account_id])
+    if account
+      if account.seeker
+        render json: account.seeker
+      else
+        render json: account.employer
+      end
+    else
+      render json: {error: "Log in"},status: :unauthorized
+    end
+  end
 
   private
 
@@ -40,7 +51,7 @@ class ApplicationController < ActionController::API
     params.permit(:name, :firstname, :secondname )
   end
   def seeker_params
-    params.permit(:firstname, :secondname)
+    params.permit(:firstname, :secondname,:gender,:yearofbirth)
   end
   def render_unprocessable_entity_response(invalid)
     render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
