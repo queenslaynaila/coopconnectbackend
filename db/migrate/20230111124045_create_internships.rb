@@ -5,10 +5,13 @@ class CreateInternships < ActiveRecord::Migration[7.0]
       t.integer :category_id
       t.text :positiontitle
       t.integer :positionsvailable
-      t.integer :salary
+      t.string :salary
       t.text :location
       t.text :keyskills
-
+      t.text :jobsummary
+      t.text :responsibilities
+      t.text :interviewprocess
+      t.text :apply
       t.timestamps
     end
   end

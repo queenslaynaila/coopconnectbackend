@@ -14,4 +14,6 @@ class Employer < ApplicationRecord
   has_many :jobapplications, through: :jobs
   has_many :seekers,through: :jobapplications
   has_many :seekers,through: :jobapplications
+  has_many :offers
+  has_many :seekers, through: :offers
 end

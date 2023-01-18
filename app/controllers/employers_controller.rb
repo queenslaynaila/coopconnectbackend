@@ -4,7 +4,6 @@ class EmployersController < ApplicationController
   # GET /employers
   def index
     @employers = Employer.all
-
     render json: @employers
   end
 
@@ -58,7 +57,7 @@ class EmployersController < ApplicationController
 
   private
 
-   
+
     # Use callbacks to share common setup or constraints between actions.
     def set_employer
       @employer = Employer.find(params[:id])
@@ -66,6 +65,6 @@ class EmployersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employer_params
-      params.require(:employer).permit(:name, :firstname, :secondname, :companytype, :websiteurl, :description, :designation, :user_type )
+      params.permit(:name, :firstname, :secondname, :companytype, :websiteurl, :description, :designation,:location, :user_type )
     end
 end

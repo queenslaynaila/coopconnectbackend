@@ -46,6 +46,6 @@ class KeyskillsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def keyskill_params
-      params.require(:keyskill).permit(:seeker_id, :skillname)
+      params.require(:keyskill).permit(:seeker_id, :skillname,:skilldescription)
     end
 end
