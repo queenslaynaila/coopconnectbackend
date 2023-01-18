@@ -1,6 +1,6 @@
 class SeekerSerializer < ActiveModel::Serializer
 
-  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied
+  attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied,:totalcompaniesapplied ,:educations,:keyskills,:experiences
 
   def totalsavedjobs
     self.object.savedjobs.count
@@ -17,6 +17,12 @@ class SeekerSerializer < ActiveModel::Serializer
   def totalinternshipsapplied
     self.object.internshipapplications.count
   end
+  def totalcompaniesapplied
+    me =  self.object.jobapplications.map do |element|
+       element.employer
+      end
+      me.count
+   end
 
   def keyskills
     self.object.keyskills.map do |element|
