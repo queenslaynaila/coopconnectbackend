@@ -46,6 +46,6 @@ class SavedinternshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def savedinternship_params
-      params.require(:savedinternship).permit(:seeker_id, :internship_id)
+      params.permit(:seeker_id, :internship_id)
     end
 end

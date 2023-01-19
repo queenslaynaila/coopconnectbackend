@@ -1,5 +1,6 @@
 class SeekerSerializer < ActiveModel::Serializer
-
+has_many :keyskills
+has_one :account
   attributes :id,  :firstname, :secondname,:email,:gender,:yearofbirth,:phone, :country, :city, :about,:profession,:yearsinprofesion ,:usertype  ,:totalsavedjobs,:totalsavedcompanies,:totaljobsapplied,:totalsavedinternships,:totalinternshipsapplied,:totalcompaniesapplied ,:educations,:keyskills,:experiences
 
   def totalsavedjobs
@@ -24,11 +25,7 @@ class SeekerSerializer < ActiveModel::Serializer
       me.count
    end
 
-  def keyskills
-    self.object.keyskills.map do |element|
-      element.skillname
-     end
-  end
+
   def mediaprofiles
     self.object.socialprofiles.each_with_index do |(key, value), index|
       puts "  #{key} => #{value}"

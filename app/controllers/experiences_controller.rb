@@ -46,6 +46,6 @@ class ExperiencesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def experience_params
-      params.require(:experience).permit(:seeker_id, :jobtitle, :description, :startdate, :enddate)
+      params.permit(:seeker_id, :jobtitle, :description, :startdate, :enddate)
     end
 end

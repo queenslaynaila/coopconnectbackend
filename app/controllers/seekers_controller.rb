@@ -37,6 +37,7 @@ class SeekersController < ApplicationController
   def destroy
     @seeker.destroy
   end
+   
   def minesavedjobs
     @seeker = Seeker.find(params[:id])
     render json: @seeker.savedjobs
