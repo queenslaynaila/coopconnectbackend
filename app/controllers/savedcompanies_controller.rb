@@ -46,6 +46,6 @@ class SavedcompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def savedcompany_params
-      params.require(:savedcompany).permit(:employer_id, :seeker_id)
+      params.permit(:employer_id, :seeker_id)
     end
 end

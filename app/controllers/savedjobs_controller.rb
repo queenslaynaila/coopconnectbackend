@@ -46,6 +46,6 @@ class SavedjobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def savedjob_params
-      params.require(:savedjob).permit(:seeker_id, :job_id)
+      params.permit(:seeker_id, :job_id)
     end
 end

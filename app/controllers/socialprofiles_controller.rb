@@ -46,6 +46,6 @@ class SocialprofilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def socialprofile_params
-      params.require(:socialprofile).permit(:seeker_id, :platform, :link)
+      params.permit(:seeker_id, :platform, :link)
     end
 end

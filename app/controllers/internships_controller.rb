@@ -18,7 +18,7 @@ class InternshipsController < ApplicationController
     @internship = Internship.new(internship_params)
 
     if @internship.save
-      render json: @internship, status: :created, location: @internship
+      render json: @internship.employer, status: :created, location: @internship
     else
       render json: @internship.errors, status: :unprocessable_entity
     end
@@ -37,7 +37,10 @@ class InternshipsController < ApplicationController
   def destroy
     @internship.destroy
   end
-
+  def totalapplications
+    @internship = Internship.find(params[:id])
+    render json: @job.internshipapplications
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_internship
@@ -46,6 +49,6 @@ class InternshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def internship_params
-      params.require(:internship).permit(:employer_id, :category_id, :positiontitle, :positionsvailable, :salary, :location, :keyskills,:jobsummary,:responsibilities,:interviewprocess,:apply)
+      params.permit(:employer_id, :category_id, :positiontitle, :positionsvailable, :salary, :location, :keyskills,:jobsummary,:responsibilities,:interviewprocess,:apply)
     end
 end
