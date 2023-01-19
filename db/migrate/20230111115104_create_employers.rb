@@ -9,6 +9,8 @@ class CreateEmployers < ActiveRecord::Migration[7.0]
       t.string :websiteurl
       t.text :description
       t.text :designation
+      t.text :location
+      t.date :foundedin
       t.text :user_type, default:"Employer"
 
       t.timestamps

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
 
   def createemployer
     @employer = Employer.new(employer_params)
@@ -33,7 +35,7 @@ class ApplicationController < ActionController::API
   end
 
   def show
-    account = Account.find_by(id: session[:account_id])
+    account = Account.find_by(id:session[:account_id])
     if account
       if account.seeker
         render json: account.seeker
@@ -43,6 +45,10 @@ class ApplicationController < ActionController::API
     else
       render json: {error: "Log in"},status: :unauthorized
     end
+  end
+
+  def authorized
+    return render json:{error:"Not Authorized"},status: :unauthorized unless session.include? :account_id
   end
 
   private

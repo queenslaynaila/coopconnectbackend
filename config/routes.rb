@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :languages
+  resources :offers
   resources :socialprofiles
   resources :keyskills
   resources :internshipapplications

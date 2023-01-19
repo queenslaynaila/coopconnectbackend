@@ -15,7 +15,9 @@ class CreateJobs < ActiveRecord::Migration[7.0]
       t.text :responsibilities
       t.text  :overallsummarry
       t.date :dateposted
-
+      t.text :interviewprocess
+      t.text :apply
+      
       t.timestamps
     end
   end

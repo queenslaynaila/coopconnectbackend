@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_17_202706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
     t.date "enddate"
     t.text "certificatename"
     t.text "institution"
-    t.datetime "created_at", null: false
+    t.date  "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
@@ -49,7 +49,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
     t.string "websiteurl"
     t.text "description"
     t.text "designation"
+<<<<<<< HEAD
     t.text "user_type", default: "Jobseeker"
+=======
+    t.text "location"
+    t.date "foundedin"
+    t.text "user_type", default: "Employer"
+>>>>>>> a2abdc70159ae75f2cfbe2ffa94f5d0d4e62ab77
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,8 +72,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
 
   create_table "internshipapplications", force: :cascade do |t|
     t.integer "internship_id"
-    t.date "dateapplied"
     t.integer "seeker_id"
+    t.text "status", default: "Applied"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,9 +83,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
     t.integer "category_id"
     t.text "positiontitle"
     t.integer "positionsvailable"
-    t.integer "salary"
+    t.string "salary"
     t.text "location"
     t.text "keyskills"
+    t.text "jobsummary"
+    t.text "responsibilities"
+    t.text "interviewprocess"
+    t.text "apply"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,7 +97,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
   create_table "jobapplications", force: :cascade do |t|
     t.integer "job_id"
     t.integer "seeker_id"
+<<<<<<< HEAD
     t.date "dateapplied"
+=======
+    t.text "status", default: "Applied"
+>>>>>>> a2abdc70159ae75f2cfbe2ffa94f5d0d4e62ab77
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -107,6 +121,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
     t.text "responsibilities"
     t.text "overallsummarry"
     t.date "dateposted"
+    t.text "interviewprocess"
+    t.text "apply"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,6 +130,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_223230) do
   create_table "keyskills", force: :cascade do |t|
     t.integer "seeker_id"
     t.text "skillname"
+    t.text "skilldescription"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.integer "seeker_id"
+    t.text "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "employer_id"
+    t.integer "seeker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

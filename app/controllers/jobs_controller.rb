@@ -18,7 +18,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      render json: @job, status: :created, location: @job
+      render json: @job.employer, status: :created, location: @job
     else
       render json: @job.errors, status: :unprocessable_entity
     end
@@ -36,6 +36,10 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   def destroy
     @job.destroy
+  end
+  def totalapplications
+    @job = Job.find(params[:id])
+    render json: @job.jobapplications
   end
 
   private

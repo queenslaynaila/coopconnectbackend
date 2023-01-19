@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   # POST '/login'
   def create
       account = Account.find_by(email:params[:email])
@@ -13,6 +14,10 @@ class SessionsController < ApplicationController
       else
          render json: {error: "Invalid email or password"}, status: :unauthorized
       end
+  end
+
+  def show
+    
   end
 
   # DELETE '/logout'

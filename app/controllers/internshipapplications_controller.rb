@@ -46,6 +46,6 @@ class InternshipapplicationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def internshipapplication_params
-      params.require(:internshipapplication).permit(:internship_id, :dateapplied, :seeker_id)
+      params.require(:internshipapplication).permit(:internship_id, :status , :seeker_id)
     end
 end

@@ -14,7 +14,8 @@ class Seeker < ApplicationRecord
   has_many :internshipapplications
   has_many :internships , through: :internshipapplications
   has_many :jobapplications
-
+  has_many :offers
+  has_many :employers, through:  :offers
   has_many :employers , through: :jobapplications
 
   has_many :savedcompanies
